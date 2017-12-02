@@ -18,7 +18,7 @@ import crats.mvcbaseproject.view.PersonNamesListScreen;
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     ListView projectlistView;
-    String [] projectList = {"ProDigi"};
+    String [] projectList = {"ProDigi","Abrahim Senra Abrahao"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +49,20 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        Intent intent;
         switch(position){
             case 0:
-                Intent intent = new Intent(this, PersonNamesListScreen.class);
+                 intent = new Intent(this, PersonNamesListScreen.class);
                 startActivity(intent);
+                setContentView(R.layout.project_lists);
+                break;
+            case 1:
+                 intent = new Intent(this, RandomUserScreen.class);
+                startActivity(intent);
+                //setContentView(R.layout.random_user);
                 break;
             default:
-                setContentView(R.layout.project_lists);
+
         }
 
 

@@ -84,10 +84,7 @@ public class PersonController implements IPersonApi {
     }
 
     private JsonObjectRequest fetchPersonRequest(){
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                url,
-
-                new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         // To avoid create variable inside of loops
